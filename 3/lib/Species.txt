@@ -1,0 +1,75 @@
+Elephant
+Lion
+Tiger
+Bear
+Zebra
+Giraffe
+Kangaroo
+Koala
+Penguin
+Dolphin
+Whale
+Shark
+Octopus
+Seahorse
+Owl
+Eagle
+Falcon
+Parrot
+Peacock
+Flamingo
+Crocodile
+Alligator
+Lizard
+Chameleon
+Snake
+Frog
+Tortoise
+Turtle
+Rabbit
+Hare
+Squirrel
+Bat
+Raccoon
+Fox
+Wolf
+Deer
+Moose
+Bison
+Camel
+Horse
+Donkey
+Sheep
+Goat
+Cow
+Pig
+Chicken
+Duck
+Goose
+Turkey
+Swan
+Aardvark
+Armadillo
+Cheetah
+Hyena
+Lemur
+Sloth
+Okapi
+Wombat
+Tasmanian Devil
+Axolotl
+Pangolin
+Mantis Shrimp
+Narwhal
+Manatee
+Red Panda
+Komodo Dragon
+Quokka
+Alpaca
+Wallaby
+Meerkat
+Gibbon
+Galapagos Tortoise
+Vulture
+Tapir
+Praying Mantis
