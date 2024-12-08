@@ -5,7 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
+//Static functions are stored here
 public class Function {
+
+    public static String getprint(Animal g){
+        String returnme = App.dex.indexOf(g)+1 + ". " + g.name + " the " + g.type + " $" + g.price;
+        return returnme;
+    }
+
     //Get a randomized name
     public static String getfromfile(String path, int maxline){ //lib/Names.txt 50 and Lib/Species.txt 75
             //The herculian task of reading information from a single file
@@ -36,11 +43,20 @@ public class Function {
             output.flush();
 
             for (int n = 0; n < App.dex.size(); n++) {
-                output.write(Animal.getprint(App.dex.get(n)));
+                output.write(getprint(App.dex.get(n)));
                 output.newLine();
             }
             output.close();
         } catch (IOException e) {e.printStackTrace();}
+    }
+
+    public static void die(int index) { 
+        Animal temp = App.dex.get(index);
+        App.dex.remove(index);
+        App.updateaccount(temp.price);
+        System.out.println("Goodbye " + temp.name);
+        System.out.println("Account Balance: " + App.acc());
+        Function.update();
     }
 
     //Merge two strings to create a randomized name
