@@ -1,4 +1,4 @@
-public class Animal implements Creature{
+public class Animal extends Creature{
     //Data
     String name;
     String type;
@@ -16,7 +16,7 @@ public class Animal implements Creature{
         //App.dex.add(this); Could automatically add them to array with this, but randomization in Gameplay 14 messes with it
     }
 
-    public static Animal randomize(){
+    public Animal randomize(){
             String tempname = Function.getfromfile("lib/Names.txt", 50);
             String temptype = Function.getfromfile("lib/Species.txt", 75);
             Animal returnme = new Animal(tempname, temptype, 1); //Gen should always be 1
@@ -24,10 +24,10 @@ public class Animal implements Creature{
             return returnme;
         }
     
-    public static Animal getrandom(){return Animal.randomize();}
+    public Animal getrandom(){return randomize();}
 
     
-    public static void die(int index) { 
+    public void die(int index) { 
         Animal temp = App.dex.get(index);
         App.dex.remove(index);
         App.updateaccount(temp.price);
@@ -36,7 +36,7 @@ public class Animal implements Creature{
         Function.update();
     }
 
-    public static Animal reproduce(Animal d, Animal e) {
+    public Animal reproduce(Animal d, Animal e) {
         Animal returnme = new Animal(
             Function.mergeString(d.name, e.name),
             Function.mergeString(d.type, e.type),
@@ -48,10 +48,5 @@ public class Animal implements Creature{
 
     public void print() {
         System.out.println(this.name + " the " + this.type + " $" + this.price);
-    }
-
-    public static String getprint(Animal g){
-        String returnme = App.dex.indexOf(g)+1 + ". " + g.name + " the " + g.type + " $" + g.price;
-        return returnme;
     }
 }
