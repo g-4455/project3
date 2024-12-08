@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 
-public class App{
+//Remove statics 
+//Creature update for Animal
 
+public class App{
     private static Boolean isPaid = true;
     private static int account = 0;
     private static int todaysfee = 0;
@@ -21,6 +23,9 @@ public class App{
     public static int acc(){return account;}
     
     public static ArrayList<Animal> dex = new ArrayList<Animal>();  
+
+    private static Gameplay callgameplay = new Gameplay(); //Calling methods w/ out using static
+
     
     //Days need to consist of:
     /* Tell player about a maitnence cost
@@ -30,7 +35,7 @@ public class App{
      */
     public static void main(String[] args) {
         //Run Intro
-        Gameplay.intro();
+        callgameplay.intro();
 
         //Main Gameplay Loop
         while (isPaid){
@@ -43,7 +48,7 @@ public class App{
 
             //Reproduction function
             System.out.println("Some animals have reproduced!");
-            Gameplay.reproductionloop();
+            callgameplay.reproductionloop();
 
             Gameplay.seperator();
 
@@ -55,7 +60,7 @@ public class App{
                 sellme = Gameplay.sellchoice()-1;
                 
                 if (sellme < 0) continueloop = false; //If done selling
-                else Animal.die(sellme);
+                else Function.die(sellme);
                 //Otherwise
             }
             continueloop = true;
