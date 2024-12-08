@@ -1,7 +1,9 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Gameplay {
+public class Gameplay extends Animal{
+
+    public Gameplay(){super(s, s, parent1);} //Required code?
 
     private static String s = "~~~~~~~~~~~~~~~~~~ Day: "+ Fee.getdays() +" ~~~~~~~~~~~~~~~~~~";
     
@@ -22,10 +24,10 @@ public class Gameplay {
         return returnme;
     }
     
-    public static Animal choice(){
+    public Animal choice(){
         //Reveal 3 random animals and let the user add 1 to the array
         System.out.println("Pick an animal with 1, 2, or 3");
-        Animal[] op = {Animal.getrandom(), Animal.getrandom(), Animal.getrandom()};
+        Animal[] op = {getrandom(), getrandom(), getrandom()};
 
         System.out.print("1. "); op[0].print();
         System.out.print("2. "); op[1].print();
@@ -53,12 +55,14 @@ public class Gameplay {
         return returnme;
     }
 
-    public static void intro(){ //Loop the above functions 5 times
-        for (int i = 0; i < 5; i++){App.dex.add(Gameplay.choice());}
+    public void intro(){ //Loop the above functions 5 times
+        for (int i = 0; i < 5; i++){App.dex.add(choice());}
         Function.update();
     }
 
-    public static void reproductionloop(){
+
+
+    public void reproductionloop(){
         //max reproductions should be HALF of dex's size, rounded down
         int loops = (int) Math.floor(App.dex.size()/2);
 
@@ -73,7 +77,7 @@ public class Gameplay {
                 Animal temp2 = App.dex.get(parent2);
 
                 if (temp != temp2){
-                App.dex.add(Animal.reproduce(temp, temp2));
+                App.dex.add(reproduce(temp, temp2));
                 System.out.println(temp.name + " & " + temp2.name + " gave birth to " + App.dex.get(App.dex.size()-1).name);
                 rcount++;
 
